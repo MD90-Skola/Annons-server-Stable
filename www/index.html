@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annons System</title>
+    <script defer src="script.js"></script> <!-- Kopplar ihop JavaScript-filen -->
+    <link rel="stylesheet" href="style.css"> <!-- Kopplar in CSS -->
+</head>
+<body>
+
+    <!-- 📌 Formulär för att skapa en annons -->
+    <h2>Skapa Annons</h2>
+    <form id="annonsForm">
+        <input type="text" id="namn" placeholder="Namn" required>
+        <input type="number" id="alder" placeholder="Ålder" required>
+        <input type="text" id="adress" placeholder="Adress" required>
+        <input type="text" id="jobbtitel" placeholder="Jobbtitel" required>
+        <textarea id="ovrigt" placeholder="Övrig text (valfritt)"></textarea>
+        <button type="submit">Skicka</button> <!-- Skickar annonsen -->
+    </form>
+
+    <!-- 📌 Sökfält för att hitta annonser -->
+    <h2>Sök annonser</h2>
+    <input type="text" id="searchJobbtitel" placeholder="Sök jobbtitel"> <!-- Fält för jobbtitel -->
+    <input type="text" id="searchOrt" placeholder="Sök ort"> <!-- Fält för ort -->
+    <button onclick="searchAnnonser()">Sök</button> <!-- Knapp för att söka annonser -->
+
+    <!-- 📌 Här visas resultaten från sökningen med en fade-in-effekt -->
+    <div id="searchResultContainer">
+        <ul id="searchResult"></ul>
+    </div>
+
+    <!-- 📌 Knapp för att hämta alla annonser (Admin) -->
+    <h2>Se alla annonser (Admin)</h2>
+    <button onclick="fetchAnnonser()">Hämta Annonser</button>
+    <ul id="result"></ul>
+
+</body>
+</html>
